@@ -1,6 +1,5 @@
 *** Settings ***
 Library     Selenium2Library
-Library     XvfbRobot
 
 *** Test Cases ***
 Open Google
