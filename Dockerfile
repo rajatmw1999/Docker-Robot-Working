@@ -53,6 +53,6 @@ RUN mv geckodriver /usr/local/bin \
 # RUN apt-get update
 # RUN apt-get install -y --no-install-recommends --allow-unauthenticated firefox
 
-CMD ["newsh.sh"]
+CMD ["TC1.robot"]
 
-ENTRYPOINT ["sh"]
+ENTRYPOINT ["robot"]
