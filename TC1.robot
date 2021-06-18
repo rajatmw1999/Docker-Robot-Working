@@ -1,9 +1,8 @@
 *** Settings ***
-Library     Selenium2Library
+Library     SeleniumLibrary
 
 *** Test Cases ***
 Open Google
-    Open Browser    firefox
-    GoTo    http://google.com
+    Open Browser   https://google.com/   firefox
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
