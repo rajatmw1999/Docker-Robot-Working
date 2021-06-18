@@ -18,6 +18,7 @@ RUN pip install -r requirements.txt
 RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz \
 	&& tar xvzf geckodriver-*.tar.gz \
 	&& rm geckodriver-*.tar.gz 
+RUN export PATH=$PATH:/
 # COPY geckodriver .
 
 # RUN mv geckodriver /usr/local/bin \
