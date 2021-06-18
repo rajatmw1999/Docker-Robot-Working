@@ -1,15 +1,25 @@
 FROM ubuntu:20.04
 
-MAINTAINER "Ipatios Asmanidis" <ypasmk@gmail.com>
+MAINTAINER "Rajat Upadhyay" <rajatis1999@gmail.com>
 
 LABEL name="Docker build for acceptance testing using the robot framework"
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update \
-	&& apt-get install -y build-essential libssl-dev libffi-dev python-dev \
-		python3-pip python-dev gcc phantomjs firefox \
-		xvfb zip wget ca-certificates ntpdate \
-		libnss3-dev libxss1 libappindicator3-1 libindicator7 gconf-service libgconf-2-4 libpango1.0-0 xdg-utils fonts-liberation \
-	&& rm -rf /var/lib/apt/lists/*
+
+RUN apt update \
+	&& apt install software-properties-common \
+	&& add-apt-repository ppa:deadsnakes/ppa \
+	&& apt update \
+	&& apt install python3.8 
+
+RUN python ––version
+RUN echo apt install firefox
+RUN echo firefox --version
+# RUN apt-get update \
+# 	&& apt-get install -y build-essential libssl-dev libffi-dev python-dev \
+# 		python3-pip python-dev gcc phantomjs firefox \
+# 		xvfb zip wget ca-certificates ntpdate \
+# 		libnss3-dev libxss1 libappindicator3-1 libindicator7 gconf-service libgconf-2-4 libpango1.0-0 xdg-utils fonts-liberation \
+# 	&& rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
 COPY TC1.robot .
 RUN pip install -r requirements.txt
@@ -37,6 +47,6 @@ RUN mv geckodriver /usr/local/bin \
 # RUN apt-get update
 # RUN apt-get install -y --no-install-recommends --allow-unauthenticated firefox
 
-CMD ["TC1.robot"]
+CMD ["newsh.sh"]
 
-ENTRYPOINT ["robot"]
+ENTRYPOINT ["sh"]
