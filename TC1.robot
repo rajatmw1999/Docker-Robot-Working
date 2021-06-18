@@ -5,4 +5,4 @@ Library     SeleniumLibrary
 Open Google
     Open Browser   https://google.com/   headlessfirefox        
     ${title}=       Get Title
-    Should Be Equal    Google    ${title}
+    Should Be Equal    GoogleABC    ${title}
