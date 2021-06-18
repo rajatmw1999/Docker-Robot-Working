@@ -11,9 +11,9 @@ RUN apt update \
 	&& apt update \
 	&& apt install -y python3.8 
 
-RUN python ––version
-RUN echo apt install firefox
-RUN echo firefox --version
+# RUN python ––version
+# RUN echo apt install firefox
+# RUN echo firefox --version
 # RUN apt-get update \
 # 	&& apt-get install -y build-essential libssl-dev libffi-dev python-dev \
 # 		python3-pip python-dev gcc phantomjs firefox \
