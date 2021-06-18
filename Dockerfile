@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 MAINTAINER "Ipatios Asmanidis" <ypasmk@gmail.com>
 
 LABEL name="Docker build for acceptance testing using the robot framework"
-
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
 	&& apt-get install -y build-essential libssl-dev libffi-dev python-dev \
 		python3-pip python-dev gcc phantomjs firefox \
