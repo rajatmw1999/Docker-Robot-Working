@@ -6,10 +6,10 @@ LABEL name="Docker build for acceptance testing using the robot framework"
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update \
-	&& apt install software-properties-common \
+	&& apt install -y software-properties-common \
 	&& add-apt-repository ppa:deadsnakes/ppa \
 	&& apt update \
-	&& apt install python3.8 
+	&& apt install -y python3.8 
 
 RUN python ––version
 RUN echo apt install firefox
