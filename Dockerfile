@@ -17,12 +17,11 @@ RUN pip install -r requirements.txt
 
 RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz \
 	&& tar xvzf geckodriver-*.tar.gz \
-	&& rm geckodriver-*.tar.gz
-	
-COPY geckodriver .
+	&& rm geckodriver-*.tar.gz \
+# COPY geckodriver .
 
-RUN mv geckodriver /usr/local/bin \
-	&& chmod a+x /usr/local/bin/geckodriver
+# RUN mv geckodriver /usr/local/bin \
+# 	&& chmod a+x /usr/local/bin/geckodriver
 
 # install chrome and chromedriver in one run command to clear build caches for new versions (both version need to match)
 # RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
