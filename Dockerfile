@@ -23,8 +23,8 @@ RUN apt update \
 COPY requirements.txt .
 COPY TC1.robot .
 
-# RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-# RUN python3.8 get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN python3.8 get-pip.py
 
 RUN python3 -m pip install -r requirements.txt
 
