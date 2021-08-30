@@ -53,6 +53,6 @@ RUN mv geckodriver /usr/local/bin \
 # RUN apt-get update
 # RUN apt-get install -y --no-install-recommends --allow-unauthenticated firefox
 
-CMD ["TC1.robot"]
+CMD ["quote.py"]
 
-ENTRYPOINT ["robot"]
+ENTRYPOINT ["python3.8"]
