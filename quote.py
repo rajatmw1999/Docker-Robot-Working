@@ -5,6 +5,8 @@ from selenium import webdriver
 import time
 from selenium.webdriver import FirefoxOptions
 opts = FirefoxOptions()
+opts.add_argument('--ignore-certificate-errors')
+opts.add_argument('--allow-running-insecure-content')
 opts.add_argument("--headless")
 def get_quote():
     today_quote = None
