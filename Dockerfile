@@ -23,7 +23,7 @@ RUN apt update \
 # 		libnss3-dev libxss1 libappindicator3-1 libindicator7 gconf-service libgconf-2-4 libpango1.0-0 xdg-utils fonts-liberation \
 # 	&& rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
-COPY TC1.robot .
+COPY quote.py .
 COPY newsh.sh .
 
 # RUN wget https://bootstrap.pypa.io/get-pip.py -o get-pip.py
