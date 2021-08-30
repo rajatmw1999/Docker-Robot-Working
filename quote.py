@@ -3,11 +3,9 @@ from selenium import webdriver
 
 # time for pausing between navigation
 import time
-from selenium.webdriver.chrome.options import Options  
-
-chrome_options = Options()
-chrome_options.add_argument("--headless") 
-
+from selenium.webdriver import FirefoxOptions
+opts = FirefoxOptions()
+opts.add_argument("--headless")
 def get_quote():
     today_quote = None
     myquotesfile = open('quotes.txt','r', encoding="utf8")
@@ -30,7 +28,7 @@ def get_quote():
 
 def submit_assignment(username, password):
     # Using Chrome to access web
-    driver = webdriver.Firefox()
+    driver = webdriver.Firefox(firefox_options=opts)
     time.sleep(5)
 
     # Open the website
